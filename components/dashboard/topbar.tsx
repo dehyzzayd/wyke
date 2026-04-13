@@ -10,6 +10,7 @@ import {
   ChevronRight,
   HelpCircle,
   LogOut,
+  Menu,
   MessageSquare,
   Search,
   Settings,
@@ -26,6 +27,7 @@ import {
   activity,
 } from '@/lib/mock-data';
 import { cn } from '@/lib/utils';
+import { useMobileMenu } from './mobile-menu';
 
 /* ────────────────────────────────────────────────────────────────────────── */
 
@@ -117,6 +119,7 @@ export function Topbar({
   subtitle?: string;
 }) {
   const router = useRouter();
+  const { toggle: toggleMenu } = useMobileMenu();
 
   // — Search state
   const [q, setQ] = useState('');
@@ -170,13 +173,23 @@ export function Topbar({
 
   return (
     <header className="flex flex-col items-stretch justify-between gap-3 px-1 py-2 sm:flex-row sm:items-center">
-      <div>
-        <h1 className="text-[18px] font-semibold tracking-[-0.01em] text-ink-900">
-          {title}
-        </h1>
-        {subtitle && (
-          <p className="mt-0.5 text-[12.5px] text-ink-400">{subtitle}</p>
-        )}
+      <div className="flex items-start gap-2.5">
+        <button
+          type="button"
+          aria-label="Open navigation"
+          onClick={toggleMenu}
+          className="mt-0.5 inline-flex h-9 w-9 shrink-0 items-center justify-center rounded-lg border border-[#E6E5E0] bg-white text-ink-700 transition-colors hover:bg-[#F4F4F1] lg:hidden"
+        >
+          <Menu size={16} strokeWidth={1.75} />
+        </button>
+        <div className="min-w-0">
+          <h1 className="text-[18px] font-semibold tracking-[-0.01em] text-ink-900">
+            {title}
+          </h1>
+          {subtitle && (
+            <p className="mt-0.5 text-[12.5px] text-ink-400">{subtitle}</p>
+          )}
+        </div>
       </div>
 
       <div className="flex items-center gap-2">
