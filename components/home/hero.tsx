@@ -35,16 +35,15 @@ export function Hero() {
 
       {/* Hero content */}
       <div className="relative mx-auto flex min-h-[100svh] max-w-7xl items-center px-5 pt-24 pb-16 sm:px-6 sm:pt-28 lg:pt-0 lg:pb-0">
-        <div className="max-w-3xl">
+        <div className="max-w-none xl:max-w-5xl">
           <motion.h1
             {...fadeUp}
             transition={{ duration: 0.6 }}
             className="font-sans text-[40px] sm:text-[64px] lg:text-[88px] xl:text-[104px] font-black uppercase leading-[0.95] tracking-[-0.025em] text-white drop-shadow-[0_2px_24px_rgba(15,23,42,0.25)]"
           >
-            <span className="block">Capture,</span>
-            <span className="block">preserve & query</span>
-            <span className="block">
-              every{' '}
+            <span className="block">Capture, preserve</span>
+            <span className="block">&amp; query every</span>
+            <span className="block whitespace-nowrap">
               <Typewriter
                 text={[
                   'expert.',
