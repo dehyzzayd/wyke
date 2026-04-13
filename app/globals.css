@@ -1,0 +1,68 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 255 255 255;
+    --foreground: 15 23 42;
+  }
+
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    @apply bg-white text-ink-900 font-sans;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+
+  ::selection {
+    background-color: #BFDBFE;
+    color: #0F172A;
+  }
+}
+
+@layer components {
+  /* Elegant underline-on-hover for nav links */
+  .nav-link {
+    @apply relative text-ink-400 transition-colors duration-200 hover:text-ink-900;
+  }
+  .nav-link::after {
+    content: '';
+    @apply absolute left-0 -bottom-1 h-[2px] w-0 bg-brand-600 transition-all duration-300 ease-out;
+  }
+  .nav-link:hover::after,
+  .nav-link.is-active::after {
+    @apply w-full;
+  }
+
+  .dot-grid {
+    background-image: linear-gradient(rgba(255, 255, 255, 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.06) 1px, transparent 1px);
+    background-size: 44px 44px;
+  }
+
+  .scrollbar-none::-webkit-scrollbar {
+    display: none;
+  }
+  .scrollbar-none {
+    scrollbar-width: none;
+  }
+
+  /* Typing indicator (query twin) */
+  .typing-dot {
+    @apply inline-block h-1.5 w-1.5 rounded-full bg-ink-300;
+    animation: typingDot 1.2s ease-in-out infinite;
+  }
+  .typing-dot:nth-child(2) { animation-delay: 0.15s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.3s; }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
