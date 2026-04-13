@@ -70,14 +70,14 @@ export default function SessionsPage() {
 
       <main className="px-4 pb-8 pt-3 lg:px-6">
         {/* Tabs */}
-        <div className="inline-flex rounded-lg border border-[#EBEAE6] bg-white p-1">
+        <div className="scrollbar-none inline-flex max-w-full overflow-x-auto rounded-lg border border-[#EBEAE6] bg-white p-1">
           {tabs.map((t) => {
             const active = t === tab;
             return (
               <button
                 key={t}
                 onClick={() => setTab(t)}
-                className={`rounded-md px-3 py-1 text-[12px] font-medium transition-all ${
+                className={`shrink-0 whitespace-nowrap rounded-md px-3 py-1 text-[12px] font-medium transition-all ${
                   active
                     ? 'bg-ink-900 text-white'
                     : 'text-ink-400 hover:text-ink-900'
@@ -107,9 +107,69 @@ export default function SessionsPage() {
             return (
               <li
                 key={s.id}
-                className="rounded-xl border border-[#EBEAE6] bg-white px-5 py-3.5"
+                className="rounded-xl border border-[#EBEAE6] bg-white p-4 sm:px-5 sm:py-3.5"
               >
-                <div className="grid grid-cols-1 items-center gap-4 lg:grid-cols-[2fr_1.2fr_1.4fr_0.8fr_1fr_1fr_0.8fr]">
+                {/* ── Mobile card ─────────────────────────────── */}
+                <div className="lg:hidden">
+                  <div className="flex items-start justify-between gap-3">
+                    <div className="flex min-w-0 items-center gap-3">
+                      <Avatar name={e.name} size="sm" />
+                      <div className="min-w-0">
+                        <p className="truncate text-[13.5px] font-semibold text-ink-900">
+                          {e.name}
+                        </p>
+                        <p className="truncate text-[11.5px] text-ink-400">
+                          {e.role}
+                        </p>
+                      </div>
+                    </div>
+                    <Badge tone={statusTone[s.status]}>
+                      {s.status === 'In Progress' && (
+                        <span className="h-1 w-1 rounded-full bg-[#B45309]" />
+                      )}
+                      {s.status === 'Completed' && (
+                        <span className="h-1 w-1 rounded-full bg-[#0F766E]" />
+                      )}
+                      {s.status}
+                    </Badge>
+                  </div>
+
+                  <div className="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11.5px] text-ink-500">
+                    <span className="text-ink-700">{s.type}</span>
+                    <span className="text-ink-300">·</span>
+                    <span>
+                      {s.status === 'Scheduled'
+                        ? `Scheduled · ${fmtTime(s.startedAt)}`
+                        : fmtTime(s.startedAt)}
+                    </span>
+                    {s.durationMin > 0 && (
+                      <>
+                        <span className="text-ink-300">·</span>
+                        <span className="tabular-nums">{s.durationMin}m</span>
+                      </>
+                    )}
+                  </div>
+
+                  <div className="mt-3 flex items-center gap-3">
+                    <Progress value={s.depth} className="flex-1" />
+                    <span className="text-[11.5px] font-medium tabular-nums text-ink-700">
+                      {s.depth}%
+                    </span>
+                    <button
+                      onClick={() =>
+                        s.status === 'Completed' ? setOpen(s) : null
+                      }
+                      disabled={s.status !== 'Completed'}
+                      className="ml-auto inline-flex items-center gap-1 rounded-md px-2 py-1 text-[12px] font-medium text-ink-700 hover:bg-[#F6F6F4] hover:text-ink-900 disabled:cursor-not-allowed disabled:text-ink-300 disabled:hover:bg-transparent"
+                    >
+                      View
+                      <ArrowUpRight size={12} />
+                    </button>
+                  </div>
+                </div>
+
+                {/* ── Desktop row (lg+) ───────────────────────── */}
+                <div className="hidden items-center gap-4 lg:grid lg:grid-cols-[2fr_1.2fr_1.4fr_0.8fr_1fr_1fr_0.8fr]">
                   <div className="flex items-center gap-3">
                     <Avatar name={e.name} size="sm" />
                     <div className="min-w-0">
@@ -121,29 +181,21 @@ export default function SessionsPage() {
                       </p>
                     </div>
                   </div>
-
                   <span className="text-[13px] text-ink-700">{s.type}</span>
-
                   <span className="text-[13px] text-ink-500">
                     {s.status === 'Scheduled'
                       ? `Scheduled · ${fmtTime(s.startedAt)}`
                       : fmtTime(s.startedAt)}
                   </span>
-
                   <span className="text-[13px] text-ink-500 tabular-nums">
                     {s.durationMin > 0 ? `${s.durationMin}m` : '—'}
                   </span>
-
                   <div className="flex items-center gap-2">
-                    <Progress
-                      value={s.depth}
-                      className="max-w-[120px]"
-                    />
+                    <Progress value={s.depth} className="max-w-[120px]" />
                     <span className="text-[12px] tabular-nums text-ink-500">
                       {s.depth}%
                     </span>
                   </div>
-
                   <Badge tone={statusTone[s.status]}>
                     {s.status === 'In Progress' && (
                       <span className="h-1 w-1 rounded-full bg-[#B45309]" />
@@ -153,7 +205,6 @@ export default function SessionsPage() {
                     )}
                     {s.status}
                   </Badge>
-
                   <div className="flex justify-end">
                     <button
                       onClick={() =>

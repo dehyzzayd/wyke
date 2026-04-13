@@ -272,8 +272,30 @@ export default function QueryPage() {
 
           {/* ─── RIGHT — conversation ───────────────────────── */}
           <section className="flex min-h-0 flex-col bg-[#FBFBF9]">
+            {/* Mobile-only twin picker (chip row) */}
+            <div className="scrollbar-none flex gap-1.5 overflow-x-auto border-b border-[#EFEEEA] bg-white px-4 py-3 md:hidden">
+              {filteredExperts.map((e) => {
+                const active = e.id === activeId;
+                return (
+                  <button
+                    key={e.id}
+                    onClick={() => setActiveId(e.id)}
+                    className={cn(
+                      'inline-flex shrink-0 items-center gap-1.5 rounded-full px-2.5 py-1 text-[11.5px] transition-colors',
+                      active
+                        ? 'bg-ink-900 text-white'
+                        : 'border border-[#E6E5E0] text-ink-500 hover:text-ink-900'
+                    )}
+                  >
+                    <Avatar name={e.name} size="xs" />
+                    {e.name.split(' ')[0]}
+                  </button>
+                );
+              })}
+            </div>
+
             {/* Twin header */}
-            <header className="flex flex-wrap items-start justify-between gap-3 border-b border-[#EFEEEA] bg-white px-6 py-5">
+            <header className="flex flex-wrap items-start justify-between gap-3 border-b border-[#EFEEEA] bg-white px-4 py-5 sm:px-6">
               <div className="flex items-start gap-4">
                 <span className="relative shrink-0">
                   <Avatar name={expert.name} size="xl" />

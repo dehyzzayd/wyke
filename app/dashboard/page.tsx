@@ -497,7 +497,8 @@ function RecentSessionsCard() {
         </button>
       </header>
 
-      <table className="mt-4 w-full text-left text-[12.5px]">
+      {/* md+: real table */}
+      <table className="mt-4 hidden w-full text-left text-[12.5px] md:table">
         <thead>
           <tr className="text-[10.5px] uppercase tracking-wider text-ink-300">
             <th className="pb-2 font-medium">Expert</th>
@@ -536,6 +537,41 @@ function RecentSessionsCard() {
           })}
         </tbody>
       </table>
+
+      {/* Mobile: card list */}
+      <ul className="mt-4 space-y-2.5 md:hidden">
+        {recentSessions.map((s, i) => {
+          const e = experts.find((x) => x.id === s.expertId)!;
+          return (
+            <li
+              key={i}
+              className="rounded-xl border border-[#EFEEEA] bg-[#FBFBF9] p-3.5"
+            >
+              <div className="flex items-start justify-between gap-3">
+                <div className="flex min-w-0 items-center gap-2.5">
+                  <Avatar name={e.name} size="xs" />
+                  <div className="min-w-0">
+                    <p className="truncate text-[13px] font-semibold text-ink-900">
+                      {e.name}
+                    </p>
+                    <p className="truncate text-[11px] text-ink-400">
+                      {e.role}
+                    </p>
+                  </div>
+                </div>
+                <StatusPill status={s.status} />
+              </div>
+              <div className="mt-2.5 flex flex-wrap items-center gap-x-3 gap-y-0.5 text-[11.5px] text-ink-500">
+                <span>{s.type}</span>
+                <span className="text-ink-300">·</span>
+                <span className="tabular-nums">{s.date}</span>
+                <span className="text-ink-300">·</span>
+                <span className="tabular-nums">{s.duration}</span>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
     </CardWrap>
   );
 }

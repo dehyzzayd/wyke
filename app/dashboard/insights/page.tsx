@@ -77,13 +77,13 @@ export default function InsightsPage() {
                 ...experts.map((e) => ({ value: e.id, label: e.name })),
               ]}
             />
-            <div className="flex items-center gap-0.5 rounded-lg border border-[#EBEAE6] bg-white p-1">
+            <div className="scrollbar-none flex max-w-full items-center gap-0.5 overflow-x-auto rounded-lg border border-[#EBEAE6] bg-white p-1">
               {TYPES.map((t) => (
                 <button
                   key={t}
                   onClick={() => setType(t)}
                   className={cn(
-                    'rounded-md px-2.5 py-1 text-[11.5px] font-medium transition-colors',
+                    'shrink-0 whitespace-nowrap rounded-md px-2.5 py-1 text-[11.5px] font-medium transition-colors',
                     type === t
                       ? 'bg-ink-900 text-white'
                       : 'text-ink-400 hover:text-ink-900'
