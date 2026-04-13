@@ -14,7 +14,7 @@ type T = {
 const items: T[] = [
   {
     quote:
-      'When our lead architect gave notice, we ran a DEhy session in 48 hours. Six months later his replacement still queries the twin weekly.',
+      'When our lead architect gave notice, we ran a WYKE session in 48 hours. Six months later his replacement still queries the twin weekly.',
     name: 'Daniel Okafor',
     role: 'CTO',
     company: 'Crestline Labs',

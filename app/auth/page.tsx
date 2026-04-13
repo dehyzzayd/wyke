@@ -41,9 +41,9 @@ function AuthInner() {
           <Link
             href="/"
             className="mb-10 inline-flex text-[20px] font-black uppercase tracking-[-0.02em] leading-none text-ink-900"
-            aria-label="DEHY home"
+            aria-label="WYKE home"
           >
-            DEHY
+            WYKE
           </Link>
 
           <h1 className="text-[28px] font-semibold leading-tight tracking-[-0.02em] text-ink-900">
@@ -91,7 +91,7 @@ function AuthInner() {
           </div>
 
           <p className="mt-10 text-center text-[11px] text-ink-300">
-            © 2026 DEHY · Unauthorized use is prohibited. See our{' '}
+            © 2026 WYKE · Unauthorized use is prohibited. See our{' '}
             <Link href="#" className="underline">Privacy Policy</Link>.
           </p>
         </div>

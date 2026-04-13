@@ -30,9 +30,9 @@ export function Logo({
         isDark ? 'text-white' : 'text-ink-900',
         className
       )}
-      aria-label="DEHY home"
+      aria-label="WYKE home"
     >
-      DEHY
+      WYKE
     </Link>
   );
 }

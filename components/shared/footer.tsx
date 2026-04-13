@@ -65,7 +65,7 @@ export function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col-reverse md:flex-row md:items-center md:justify-between gap-3 border-t border-[#EFEEEA] pt-7 text-[12.5px] text-ink-400">
-          <p>© 2026 DEHY. All rights reserved.</p>
+          <p>© 2026 WYKE. All rights reserved.</p>
           <p className="md:text-right">
             Built for the companies that move fast and remember everything.
           </p>

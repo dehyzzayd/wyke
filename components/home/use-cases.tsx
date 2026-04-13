@@ -11,7 +11,7 @@ const cases: Case[] = [
     Icon: Code2,
     role: 'The Founding Engineer',
     pain:
-      "She knows why every architectural decision was made. She knows which corners were cut and why. She's thinking about leaving. Her GitHub tells you what. DEhy tells you why.",
+      "She knows why every architectural decision was made. She knows which corners were cut and why. She's thinking about leaving. Her GitHub tells you what. WYKE tells you why.",
   },
   {
     Icon: TrendingUp,

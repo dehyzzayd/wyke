@@ -23,7 +23,7 @@ export function FeatureSplit() {
             Ask. Don’t search.
           </h2>
           <p className="mt-5 max-w-md text-[15px] leading-[1.75] text-ink-500">
-            DEhy doesn’t return documents — it returns a judgment call, made
+            WYKE doesn’t return documents — it returns a judgment call, made
             the way your most experienced person would have made it. Three years
             of pattern recognition, on tap, in plain English.
           </p>

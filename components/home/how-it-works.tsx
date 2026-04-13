@@ -24,7 +24,7 @@ const steps: Step[] = [
     Icon: Brain,
     title: 'Pattern Extraction',
     body:
-      'DEhy maps the mental models, heuristics, and decision trees beneath the surface-level answers. We capture the why, not just the what.',
+      'WYKE maps the mental models, heuristics, and decision trees beneath the surface-level answers. We capture the why, not just the what.',
   },
   {
     n: '03',

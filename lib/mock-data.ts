@@ -1,4 +1,4 @@
-// Centralized mock data for the DEhy.Ai prototype.
+// Centralized mock data for the WYKE prototype.
 // Internally consistent: experts, sessions, insights, queries, and activity
 // all reference the same people and depths.
 
@@ -501,14 +501,14 @@ export const heroAvatars = [
 export const testimonials = [
   {
     quote:
-      'When our lead architect gave notice, we ran a DEhy session in 48 hours. Six months later, his replacement queries his twin weekly. We didn\u2019t lose a single architectural context thread.',
+      'When our lead architect gave notice, we ran a WYKE session in 48 hours. Six months later, his replacement queries his twin weekly. We didn\u2019t lose a single architectural context thread.',
     name: 'Daniel Okafor',
     role: 'CTO',
     company: 'Crestline Labs',
   },
   {
     quote:
-      'I\u2019ve been at this company 7 years. The DEhy interview took 4 hours and surfaced things I didn\u2019t even realize I knew. It was unsettling how accurate the twin became.',
+      'I\u2019ve been at this company 7 years. The WYKE interview took 4 hours and surfaced things I didn\u2019t even realize I knew. It was unsettling how accurate the twin became.',
     name: 'Maya Reyes',
     role: 'Principal Engineer',
     company: 'Stackflow',

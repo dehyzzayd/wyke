@@ -1,6 +1,6 @@
-# DEHY — Pitch & Evaluation Brief
+# WYKE — Pitch & Evaluation Brief
 
-> **DEHY captures, preserves, and queries the tacit reasoning of your most critical employees — so when they leave, their judgment doesn't.**
+> **WYKE captures, preserves, and queries the tacit reasoning of your most critical employees — so when they leave, their judgment doesn't.**
 
 A one-pager for investors, YC partners, and anyone evaluating the company. Last updated **2026-04-13**.
 
@@ -8,7 +8,7 @@ A one-pager for investors, YC partners, and anyone evaluating the company. Last 
 
 ## 1. The Pitch In One Sentence
 
-DEHY runs Socratic AI interviews with an organization's most critical experts, extracts the *reasoning patterns* underneath their answers, and turns each one into a queryable cognitive twin that the rest of the team can ask in plain English — forever.
+WYKE runs Socratic AI interviews with an organization's most critical experts, extracts the *reasoning patterns* underneath their answers, and turns each one into a queryable cognitive twin that the rest of the team can ask in plain English — forever.
 
 ---
 
@@ -33,7 +33,7 @@ The replacement engineer spends 12-18 months relearning what the founding engine
 
 ## 3. The Solution
 
-DEHY is the **institutional memory layer** for modern companies. Three steps:
+WYKE is the **institutional memory layer** for modern companies. Three steps:
 
 1. **Pick the expert.** Anyone whose judgment your team can't afford to lose.
 2. **Run a Socratic AI interview.** A 90-minute structured conversation that probes the reasoning under each answer — not a form, not a survey.
@@ -62,7 +62,7 @@ A live twin is ready in **under 24 hours** from the first interview. Each twin g
 
 ### Differentiating product principles
 
-- **Reasoning > retrieval.** A DEHY answer reads like a 1:1 with the expert, not a Slack search result.
+- **Reasoning > retrieval.** A WYKE answer reads like a 1:1 with the expert, not a Slack search result.
 - **Cited patterns.** Every twin response surfaces the underlying captured patterns it drew from. Auditable, never a black box.
 - **The expert stays in the loop.** Twins improve only through expert sign-off — companies (and the expert) stay in control of how their reasoning is represented.
 - **24-hour activation.** From signup to a working twin in a single business day.
@@ -73,9 +73,9 @@ A live twin is ready in **under 24 hours** from the first interview. Each twin g
 
 1. **Frontier LLMs are finally good enough at structured Socratic dialogue** to conduct a real interview, not a chatbot transcript.
 2. **Tenure is collapsing.** Median tech tenure is 2.1 years (down from 4.2 in 2010). The half-life of institutional knowledge has never been shorter.
-3. **AI replaces junior pattern-recognition first.** Senior judgment (the kind DEHY captures) is the *most* valuable knowledge in the company precisely because it's now the hardest to grow organically.
+3. **AI replaces junior pattern-recognition first.** Senior judgment (the kind WYKE captures) is the *most* valuable knowledge in the company precisely because it's now the hardest to grow organically.
 4. **Companies are flattening.** Fewer mid-level engineers means fewer humans absorbing tacit knowledge through osmosis. Capture has to be deliberate.
-5. **Compliance & succession-risk reporting** is moving from optional to required at growth-stage and PE-backed companies. DEHY produces an auditable artifact.
+5. **Compliance & succession-risk reporting** is moving from optional to required at growth-stage and PE-backed companies. WYKE produces an auditable artifact.
 
 ---
 
@@ -283,4 +283,4 @@ We're raising a **$X seed** to:
 
 > **The next person to leave already has a twin.** That's the company we're building.
 
-Contact: **founders@dehy.ai** · **[calendar link]**
+Contact: **founders@wyke.ai** · **[calendar link]**

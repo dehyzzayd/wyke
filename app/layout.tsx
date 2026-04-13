@@ -16,9 +16,9 @@ const instrumentSerif = Instrument_Serif({
 });
 
 export const metadata: Metadata = {
-  title: 'DEhy — Institutional memory, finally solved.',
+  title: 'WYKE — Institutional memory, finally solved.',
   description:
-    'DEhy conducts Socratic AI interviews with your critical employees, extracts their tacit reasoning patterns, and builds a living cognitive twin your entire organization can query — forever.',
+    'WYKE conducts Socratic AI interviews with your critical employees, extracts their tacit reasoning patterns, and builds a living cognitive twin your entire organization can query — forever.',
   icons: { icon: '/favicon.svg' },
 };
 

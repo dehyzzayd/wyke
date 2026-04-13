@@ -1,8 +1,8 @@
-# DEHY
+# WYKE
 
 > **Capture, preserve, and query the tacit reasoning of your most critical employees — so when they leave, their judgment doesn't.**
 
-DEHY is the institutional-memory layer for modern companies. It runs Socratic AI interviews with an organization's most critical experts, extracts the *reasoning patterns* underneath their answers, and turns each one into a queryable cognitive twin that the rest of the team can ask in plain English — forever.
+WYKE is the institutional-memory layer for modern companies. It runs Socratic AI interviews with an organization's most critical experts, extracts the *reasoning patterns* underneath their answers, and turns each one into a queryable cognitive twin that the rest of the team can ask in plain English — forever.
 
 This repository contains the marketing site, authentication flow, and full operator dashboard for the product.
 
@@ -120,8 +120,8 @@ The prototype ships with **no backend dependencies** — all data lives in `lib/
 **Requirements:** Node ≥ 18.
 
 ```bash
-git clone https://github.com/dehyzzayd/dehy.git
-cd dehy
+git clone https://github.com/your-org/wyke.git
+cd wyke
 npm install
 npm run dev
 ```
@@ -162,7 +162,7 @@ There is **no auth gate** on the dashboard in the prototype — sign-in is decor
 
 ## Design system
 
-DEHY's visual language is a deliberately restrained, mostly-monochrome system with one accent reserved for moments of genuine signal.
+WYKE's visual language is a deliberately restrained, mostly-monochrome system with one accent reserved for moments of genuine signal.
 
 - **Surface stack:** `#FFFFFF` cards on a warm `#F2F1ED` page background (dashboard) or pure white (marketing).
 - **Borders:** `#E6E5E0` for everything; no harder lines.
@@ -196,4 +196,4 @@ The prototype is the front-end for the platform described in [`PITCH.md`](./PITC
 
 ## License
 
-© 2026 DEHY. All rights reserved. Internal source; not licensed for external use without written permission.
+© 2026 WYKE. All rights reserved. Internal source; not licensed for external use without written permission.
