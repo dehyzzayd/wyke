@@ -8,6 +8,7 @@ import { z } from 'zod';
 import Link from 'next/link';
 import { Eye, EyeOff, Mail, Lock, User, Building2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
+import { asset } from '@/lib/base-path';
 
 type Tab = 'signin' | 'signup';
 
@@ -101,7 +102,7 @@ function AuthInner() {
       <aside className="relative hidden overflow-hidden lg:block">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="/hero-sky.jpg"
+          src={asset('/hero-sky.jpg')}
           alt=""
           aria-hidden
           className="absolute inset-0 h-full w-full object-cover"

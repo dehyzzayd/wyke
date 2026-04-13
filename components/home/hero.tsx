@@ -3,6 +3,7 @@
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { Typewriter } from '@/components/ui/typewriter';
+import { asset } from '@/lib/base-path';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -15,7 +16,7 @@ export function Hero() {
       {/* Background image — full bleed, also behind the navbar */}
       {/* eslint-disable-next-line @next/next/no-img-element */}
       <img
-        src="/hero-sky.jpg"
+        src={asset('/hero-sky.jpg')}
         alt=""
         aria-hidden
         className="absolute inset-0 -z-10 h-full w-full object-cover object-[50%_30%] sm:object-center"

@@ -17,6 +17,7 @@ import { Progress } from '@/components/ui/progress';
 import {
   experts,
   sessions,
+  type Expert,
   type Session,
   type SessionStatus,
 } from '@/lib/mock-data';
@@ -183,7 +184,7 @@ function SessionPanel({
   onClose,
 }: {
   session: Session | null;
-  expertOf: (id: string) => ReturnType<typeof expertOf>;
+  expertOf: (id: string) => Expert;
   onClose: () => void;
 }) {
   const open = !!session;

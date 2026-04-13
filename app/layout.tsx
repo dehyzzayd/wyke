@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter, Instrument_Serif } from 'next/font/google';
+import { asset } from '@/lib/base-path';
 import './globals.css';
 
 const inter = Inter({
@@ -19,7 +20,7 @@ export const metadata: Metadata = {
   title: 'WYKE — Institutional memory, finally solved.',
   description:
     'WYKE conducts Socratic AI interviews with your critical employees, extracts their tacit reasoning patterns, and builds a living cognitive twin your entire organization can query — forever.',
-  icons: { icon: '/favicon.svg' },
+  icons: { icon: asset('/favicon.svg') },
 };
 
 export default function RootLayout({
