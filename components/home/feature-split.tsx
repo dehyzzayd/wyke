@@ -1,16 +1,46 @@
 'use client';
 
-import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
+import { AnimatePresence, motion } from 'framer-motion';
 import { ArrowUp, Check } from 'lucide-react';
 import { Avatar } from '@/components/ui/avatar';
+import { Typewriter } from '@/components/ui/typewriter';
 
 const points = [
-  'Answers in your expert’s actual reasoning style',
+  'Answers in your expert\u2019s actual reasoning style',
   'Cited back to the source interview moments',
   'Improves every time the expert reviews a response',
 ];
 
+const pairs: { q: string; a: string }[] = [
+  {
+    q: 'Why did we choose PostgreSQL over MongoDB in 2021?',
+    a:
+      'Operational maturity. Three of us had been on call for Mongo and could name every failure mode. I wasn\u2019t picking a database — I was picking war stories.',
+  },
+  {
+    q: 'When should we split a service vs. extend it?',
+    a:
+      'Cut on ownership lines, not feature lines. If two on-call rotations would diverge, that\u2019s a service boundary. Otherwise it\u2019s just code structure.',
+  },
+];
+
+// How long to leave each pair on screen before swapping
+const HOLD_MS = 6500;
+
 export function FeatureSplit() {
+  const [pairIdx, setPairIdx] = useState(0);
+
+  useEffect(() => {
+    const id = setInterval(
+      () => setPairIdx((i) => (i + 1) % pairs.length),
+      HOLD_MS
+    );
+    return () => clearInterval(id);
+  }, []);
+
+  const pair = pairs[pairIdx];
+
   return (
     <section className="border-y border-[#EFEEEA] bg-[#FBFBF9] py-16 sm:py-24">
       <div className="mx-auto grid max-w-7xl grid-cols-1 items-center gap-12 px-5 sm:px-6 lg:grid-cols-2 lg:gap-16">
@@ -23,9 +53,9 @@ export function FeatureSplit() {
             Ask. Don’t search.
           </h2>
           <p className="mt-5 max-w-md text-[15px] leading-[1.75] text-ink-500">
-            WYKE doesn’t return documents — it returns a judgment call, made
-            the way your most experienced person would have made it. Three years
-            of pattern recognition, on tap, in plain English.
+            WYKE doesn’t return documents — it returns a judgment call,
+            made the way your most experienced person would have made it.
+            Three years of pattern recognition, on tap, in plain English.
           </p>
 
           <ul className="mt-7 space-y-3.5">
@@ -71,20 +101,44 @@ export function FeatureSplit() {
           </header>
 
           {/* Messages */}
-          <div className="space-y-4 px-1 py-5">
-            <div className="ml-auto max-w-[78%] rounded-2xl rounded-br-sm bg-ink-900 px-4 py-2.5 text-[13.5px] text-white">
-              Why did we choose PostgreSQL over MongoDB in 2021?
-            </div>
+          <div className="min-h-[180px] space-y-4 px-1 py-5">
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`q-${pairIdx}`}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.3 }}
+                className="ml-auto max-w-[78%] rounded-2xl rounded-br-sm bg-ink-900 px-4 py-2.5 text-[13.5px] text-white"
+              >
+                {pair.q}
+              </motion.div>
+            </AnimatePresence>
 
-            <div className="flex max-w-[88%] gap-2.5">
-              <Avatar name="Sarah Chen" size="xs" />
-              <div className="rounded-2xl rounded-bl-sm border border-[#EBEAE6] bg-white px-4 py-3 text-[13.5px] leading-[1.7] text-ink-700">
-                Honestly — operational maturity. We had three engineers who
-                had been on call for Mongo before and could name every failure
-                mode. That war-story depth was the whole reason. The schema
-                rigidity wasn’t a feature, it was acceptable cost.
-              </div>
-            </div>
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={`a-${pairIdx}`}
+                initial={{ opacity: 0, y: 6 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -6 }}
+                transition={{ duration: 0.3, delay: 0.15 }}
+                className="flex max-w-[88%] gap-2.5"
+              >
+                <Avatar name="Sarah Chen" size="xs" />
+                <div className="rounded-2xl rounded-bl-sm border border-[#EBEAE6] bg-white px-4 py-3 text-[13.5px] leading-[1.7] text-ink-700">
+                  <Typewriter
+                    key={pairIdx}
+                    text={pair.a}
+                    speed={22}
+                    initialDelay={350}
+                    loop={false}
+                    cursorChar="▋"
+                    cursorClassName="ml-0.5 text-ink-400"
+                    hideCursorOnType={false}
+                  />
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
           {/* Input */}

@@ -2,6 +2,7 @@
 
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { Typewriter } from '@/components/ui/typewriter';
 
 const fadeUp = {
   initial: { opacity: 0, y: 24 },
@@ -41,7 +42,23 @@ export function Hero() {
           >
             <span className="block">Capture,</span>
             <span className="block">preserve & query</span>
-            <span className="block">every expert.</span>
+            <span className="block">
+              every{' '}
+              <Typewriter
+                text={[
+                  'expert.',
+                  'founder.',
+                  'engineer.',
+                  'operator.',
+                  'architect.',
+                ]}
+                speed={75}
+                waitTime={1800}
+                deleteSpeed={45}
+                cursorChar="_"
+                cursorClassName="ml-1 text-white/80"
+              />
+            </span>
           </motion.h1>
 
           <motion.p
