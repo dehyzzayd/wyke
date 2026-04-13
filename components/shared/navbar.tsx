@@ -17,11 +17,27 @@ export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
 
+  // Flip the navbar to opaque only once the hero has scrolled past —
+  // threshold scales with viewport height so mobile (short viewports)
+  // doesn't flip early while the hero image is still visible.
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 24);
+    const computeThreshold = () =>
+      Math.max(120, window.innerHeight - 80);
+
+    let threshold = computeThreshold();
+    const onScroll = () => setScrolled(window.scrollY > threshold);
+    const onResize = () => {
+      threshold = computeThreshold();
+      onScroll();
+    };
+
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
-    return () => window.removeEventListener('scroll', onScroll);
+    window.addEventListener('resize', onResize);
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+      window.removeEventListener('resize', onResize);
+    };
   }, []);
 
   // Close menu when scrolling or resizing past mobile
